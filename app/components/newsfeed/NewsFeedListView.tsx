@@ -7,6 +7,8 @@ interface NewsFeedListViewProps extends ViewProps {
 }
 
 class NewsFeedListView extends React.Component<NewsFeedListViewProps, {}> {
+  componentDidMount() {}
+
   render() {
     const { routeKey = '' } = this.props;
     return (

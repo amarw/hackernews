@@ -33,7 +33,8 @@ module.exports = {
     'implicit-arrow-linebreak': 0,
     'object-curly-newline': 0,
     '@typescript-eslint/explicit-member-accessibility': 0,
-    '@typescript-eslint/no-explicit-any': 0
+    '@typescript-eslint/no-explicit-any': 0,
+    "generator-star-spacing": 0
   },
   settings: {
     react: {

@@ -77,6 +77,7 @@ class TabbedView extends React.Component<TabbedViewProps, State> {
         onIndexChange={this.onIndexChange}
         initialLayout={{ width: Dimensions.get('window').width }}
         renderTabBar={this.renderTabbar}
+        lazy
       />
     );
   }

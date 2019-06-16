@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "postinstall": "rndebugger-open",
     "test": "jest",
     "lint": "./node_modules/.bin/eslint --fix 'app/**'",
     "ios": "react-native run-ios",
@@ -15,13 +16,18 @@
     "react-native-gesture-handler": "^1.3.0",
     "react-native-reanimated": "^1.0.1",
     "react-native-tab-view": "^2.6.1",
-    "react-navigation": "^3.11.0"
+    "react-navigation": "^3.11.0",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-saga": "^1.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/runtime": "^7.4.5",
     "@types/react": "^16.8.20",
     "@types/react-native": "^0.57.63",
+    "@types/react-redux": "^7.1.0",
     "@typescript-eslint/eslint-plugin": "^1.10.2",
     "@typescript-eslint/parser": "^1.10.2",
     "babel-jest": "^24.8.0",
