@@ -8,7 +8,7 @@ import {
 } from 'app/actions/constants';
 import { fetchItemsSuccess, fetchItemsFailed } from 'app/actions/ItemActions';
 import { getItem } from 'app/api';
-import arrayToObject from 'app/utilities/DataConversion';
+import { arrayToObject } from 'app/utilities/DataConversion';
 
 function* fetchItem(action: FetchItemAction) {
   try {
@@ -26,6 +26,7 @@ function* fetchItem(action: FetchItemAction) {
       yield put(fetchItemsFailed());
     }
   } catch (e) {
+    console.log(e);
     yield put(fetchItemsFailed());
   }
 }

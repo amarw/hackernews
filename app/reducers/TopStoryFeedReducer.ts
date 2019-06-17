@@ -17,23 +17,29 @@ export default (state: StoryFeed = defaultState, action: StoryFeedActions) => {
   switch (action.type) {
     case 'FETCH_STORIES':
       return {
-        ...state
+        ...state,
+        isLoading: true
       };
     case 'FETCH_STORIES_SUCCESS':
       return {
-        ...state
+        ...state,
+        stories: [...state.stories, ...action.stories],
+        isLoading: false
       };
     case 'FETCH_STORIES_FAILED':
       return {
-        ...state
+        ...state,
+        isLoading: false
       };
     case 'REFRESH_STORIES':
       return {
-        ...state
+        ...state,
+        isRefreshing: true
       };
     case 'REFRESH_STORIES_SUCCESS':
       return {
-        ...state
+        ...state,
+        isRefreshing: false
       };
     case 'REFRESH_STORIES_FAILED':
       return {

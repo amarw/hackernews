@@ -1,4 +1,6 @@
-const arrayToObject = (array: any[]) => {
+import { PAGE_LIMIT } from 'app/constants';
+
+export const arrayToObject = (array: any[]) => {
   if (!array) {
     return null;
   }
@@ -6,9 +8,25 @@ const arrayToObject = (array: any[]) => {
     return {};
   }
 
-  return array.reduce(
-    (accumulated, current) => ({ ...accumulated, [current.id]: current }),
-    {}
-  );
+  return array.reduce((accumulated, current) => {
+    if (current) {
+      return { ...accumulated, [current.id]: current };
+    }
+    return {};
+  }, {});
 };
-export default arrayToObject;
+
+export const getPageData = (
+  data: any[],
+  page: number,
+  pageSize = PAGE_LIMIT
+) => {
+  if (!data) {
+    return [];
+  }
+  const numberOfItems = page * pageSize - 1;
+  if (page * pageSize >= data.length) {
+    return data;
+  }
+  return data.slice(0, numberOfItems);
+};

@@ -34,7 +34,9 @@ module.exports = {
     'object-curly-newline': 0,
     '@typescript-eslint/explicit-member-accessibility': 0,
     '@typescript-eslint/no-explicit-any': 0,
-    "generator-star-spacing": 0
+    'generator-star-spacing': 0,
+    'react/no-multi-comp': 0,
+    'import/prefer-default-export': 0
   },
   settings: {
     react: {

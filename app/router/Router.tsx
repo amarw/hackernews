@@ -1,10 +1,10 @@
 import { createStackNavigator } from 'react-navigation';
-import NewsFeedScreen from 'app/components/newsfeed/NewsFeedScreen';
-import DetailScreen from 'app/components/details/DetailScreen';
+import HomeScreen from 'app/components/newsfeed/screens/HomeScreen';
+import DetailScreen from 'app/components/details/screens/DetailScreen';
 
 const Router = createStackNavigator(
   {
-    newsfeed: { screen: NewsFeedScreen },
+    newsfeed: { screen: HomeScreen },
     details: { screen: DetailScreen }
   },
   {

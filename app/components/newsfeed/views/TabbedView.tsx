@@ -8,7 +8,7 @@ import {
   NavigationState
 } from 'react-native-tab-view';
 import Color from 'app/utilities/Color';
-import styles from 'app/components/newsfeed/TabbedView.style';
+import styles from 'app/components/newsfeed/views/TabbedView.style';
 
 export interface TabbedViewProps extends ViewProps {
   routes: Route[];

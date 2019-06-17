@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import Color from '../../utilities/Color';
+import Color from '../../../utilities/Color';
 
 export default StyleSheet.create({
   tabbar: {

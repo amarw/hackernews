@@ -25,8 +25,7 @@ import {
 } from 'app/actions/StoryFeedActions';
 import { fetchItems } from 'app/actions/ItemActions';
 import { getNewStories, getBestStories, getTopStories } from 'app/api';
-
-const PAGE_LIMIT = 20;
+import { PAGE_LIMIT } from 'app/constants';
 
 function* fetchStoryFeed(action: FetchStoryFeedAction) {
   try {
