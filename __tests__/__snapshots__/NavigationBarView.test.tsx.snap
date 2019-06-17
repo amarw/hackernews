@@ -1,0 +1,230 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders NavigationBarView correctly 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 44,
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "height": 44,
+          "marginHorizontal": 8,
+          "width": 40,
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "color": "#fc6720",
+          "flex": 1,
+          "fontSize": 28,
+          "fontWeight": "800",
+          "letterSpacing": 2,
+          "textAlign": "center",
+          "textShadowColor": "#efeded",
+          "textShadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "textShadowRadius": 1,
+        }
+      }
+    >
+      
+    </Text>
+    <View
+      style={
+        Object {
+          "height": 44,
+          "marginHorizontal": 8,
+          "width": 40,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "backgroundColor": "#cccccc",
+          "height": 0.5,
+          "width": undefined,
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`renders NavigationBarView with title & back button correctly 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 44,
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "height": 44,
+          "marginHorizontal": 8,
+          "width": 40,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "height": 44,
+            "justifyContent": "center",
+            "marginHorizontal": 8,
+            "opacity": 1,
+            "width": 40,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 16,
+              "fontWeight": "600",
+            }
+          }
+        >
+          Back
+        </Text>
+      </View>
+    </View>
+    <Text
+      style={
+        Object {
+          "color": "#fc6720",
+          "flex": 1,
+          "fontSize": 28,
+          "fontWeight": "800",
+          "letterSpacing": 2,
+          "textAlign": "center",
+          "textShadowColor": "#efeded",
+          "textShadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "textShadowRadius": 1,
+        }
+      }
+    >
+      ABC
+    </Text>
+    <View
+      style={
+        Object {
+          "height": 44,
+          "marginHorizontal": 8,
+          "width": 40,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "backgroundColor": "#cccccc",
+          "height": 0.5,
+          "width": undefined,
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`renders NavigationBarView with title correctly 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 44,
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "height": 44,
+          "marginHorizontal": 8,
+          "width": 40,
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "color": "#fc6720",
+          "flex": 1,
+          "fontSize": 28,
+          "fontWeight": "800",
+          "letterSpacing": 2,
+          "textAlign": "center",
+          "textShadowColor": "#efeded",
+          "textShadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "textShadowRadius": 1,
+        }
+      }
+    >
+      ABC
+    </Text>
+    <View
+      style={
+        Object {
+          "height": 44,
+          "marginHorizontal": 8,
+          "width": 40,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "backgroundColor": "#cccccc",
+          "height": 0.5,
+          "width": undefined,
+        },
+      ]
+    }
+  />
+</View>
+`;

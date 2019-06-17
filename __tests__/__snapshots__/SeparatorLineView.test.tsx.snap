@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders horizontal SeparatorLineView correctly 1`] = `
+<View
+  style={
+    Array [
+      undefined,
+      Object {
+        "backgroundColor": "#cccccc",
+        "height": 0.5,
+        "width": undefined,
+      },
+    ]
+  }
+/>
+`;
+
+exports[`renders horizontal SeparatorLineView correctly 2`] = `
+<View
+  style={
+    Array [
+      undefined,
+      Object {
+        "backgroundColor": "#cccccc",
+        "height": undefined,
+        "width": 0.5,
+      },
+    ]
+  }
+/>
+`;
+
+exports[`renders horizontal SeparatorLineView with custom props correctly 1`] = `
+<View
+  style={
+    Array [
+      undefined,
+      Object {
+        "backgroundColor": "#000000",
+        "height": 10,
+        "width": undefined,
+      },
+    ]
+  }
+/>
+`;
+
+exports[`renders vertical SeparatorLineView with custom props correctly 1`] = `
+<View
+  style={
+    Array [
+      undefined,
+      Object {
+        "backgroundColor": "#000000",
+        "height": undefined,
+        "width": 10,
+      },
+    ]
+  }
+/>
+`;

@@ -10,7 +10,7 @@ import {
 interface NavigationBarButtonViewProps {
   onPress?: () => void;
   style?: StyleProp<ViewStyle>;
-  textStyle: StyleProp<TextStyle>;
+  textStyle?: StyleProp<TextStyle>;
 }
 const NavigationBarButtonView: React.FC<NavigationBarButtonViewProps> = ({
   onPress,
