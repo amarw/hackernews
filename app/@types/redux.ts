@@ -5,6 +5,7 @@ export interface StoryFeed {
   page: number;
   isLoading: boolean;
   isRefreshing: boolean;
+  length: number;
 }
 
 export interface ItemStore {

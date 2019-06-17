@@ -5,10 +5,15 @@ const defaultState: StoryFeed = {
   stories: [],
   page: 0,
   isLoading: false,
-  isRefreshing: false
+  isRefreshing: false,
+  length: 0
 };
 
 export default (state: StoryFeed = defaultState, action: StoryFeedActions) => {
+  if (action.storyFeedType !== 'top') {
+    return { ...state };
+  }
+
   switch (action.type) {
     case 'FETCH_STORIES':
       return {

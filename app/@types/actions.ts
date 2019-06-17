@@ -1,14 +1,22 @@
+import { Stories } from './models';
+import { ItemStore } from './redux';
+
 export interface FetchStoryFeedAction {
   type: 'FETCH_STORIES';
   storyFeedType: string;
+  page: number;
 }
 
 export interface FetchStoryFeedSuccessAction {
   type: 'FETCH_STORIES_SUCCESS';
+  stories: Stories;
+  storyFeedType: string;
+  page: number;
 }
 
 export interface FetchStoryFeedFailedAction {
   type: 'FETCH_STORIES_FAILED';
+  storyFeedType: string;
 }
 
 export interface RefreshStoryFeedAction {
@@ -18,28 +26,32 @@ export interface RefreshStoryFeedAction {
 
 export interface RefreshStoryFeedSuccessAction {
   type: 'REFRESH_STORIES_SUCCESS';
+  storyFeedType: string;
 }
 
 export interface RefreshStoryFeedFailedAction {
   type: 'REFRESH_STORIES_FAILED';
+  storyFeedType: string;
 }
 
 export interface FetchItemAction {
   type: 'FETCH_ITEM';
-  itemId: number;
+  itemIds: number[];
 }
 export interface FetchItemSuccessAction {
   type: 'FETCH_ITEM_SUCCESS';
+  items: ItemStore;
 }
 export interface FetchItemFailedAction {
   type: 'FETCH_ITEM_FAILED';
 }
 export interface RefreshItemAction {
   type: 'REFRESH_ITEM';
-  itemId: number;
+  itemIds: number[];
 }
 export interface RefreshItemSuccessAction {
   type: 'REFRESH_ITEM_SUCCESS';
+  items: ItemStore;
 }
 export interface RefreshItemFailedAction {
   type: 'REFRESH_ITEM_FAILED';

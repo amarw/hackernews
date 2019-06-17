@@ -7,9 +7,9 @@ export enum EndpointType {
   BestStories = 'beststories'
 }
 
-export const getEndpoint = (resource: EndpointType, id?: string) => {
+export const getEndpoint = (resource: EndpointType, id?: number) => {
   if (id !== undefined) {
-    return `${BASE_URL}/${resource}/${id}.json`;
+    return `${BASE_URL}/${resource}/${id.toString(10)}.json`;
   }
   return `${BASE_URL}/${resource}.json`;
 };

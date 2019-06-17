@@ -1,18 +1,33 @@
-import { all, fork, takeEvery, take } from 'redux-saga/effects';
+import { all, fork, takeEvery, take, put, call } from 'redux-saga/effects';
 import { FetchItemAction, RefreshItemAction } from 'app/@types/actions';
 import {
   FETCH_ITEM,
-  FETCH_ITEM_SUCCESS,
-  FETCH_ITEM_FAILED,
   REFRESH_ITEM,
   REFRESH_ITEM_SUCCESS,
   REFRESH_ITEM_FAILED
 } from 'app/actions/constants';
+import { fetchItemsSuccess, fetchItemsFailed } from 'app/actions/ItemActions';
+import { getItem } from 'app/api';
+import arrayToObject from 'app/utilities/DataConversion';
 
 function* fetchItem(action: FetchItemAction) {
-  yield action.type;
-  yield take(FETCH_ITEM_SUCCESS);
-  yield take(FETCH_ITEM_FAILED);
+  try {
+    // Collect all items
+    const response = yield all(
+      action.itemIds.map((itemId: number) => call(getItem, itemId))
+    );
+
+    if (response && response.length > 0) {
+      const itemStore = arrayToObject(response);
+      console.log(itemStore);
+      yield put(fetchItemsSuccess(itemStore));
+    } else {
+      // If no items were returned dispatch error
+      yield put(fetchItemsFailed());
+    }
+  } catch (e) {
+    yield put(fetchItemsFailed());
+  }
 }
 
 function* refreshItem(action: RefreshItemAction) {
@@ -24,6 +39,7 @@ function* refreshItem(action: RefreshItemAction) {
 function* watchFetchItem() {
   yield takeEvery(FETCH_ITEM, fetchItem);
 }
+
 function* watchRefreshItem() {
   yield takeEvery(REFRESH_ITEM, refreshItem);
 }

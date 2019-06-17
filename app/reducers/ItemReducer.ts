@@ -5,25 +5,10 @@ const defaultState: ItemStore = {};
 
 export default (state: ItemStore = defaultState, action: ItemActions) => {
   switch (action.type) {
-    case 'FETCH_ITEM':
-      return {
-        ...state
-      };
     case 'FETCH_ITEM_SUCCESS':
       return {
-        ...state
-      };
-    case 'FETCH_ITEM_FAILED':
-      return {
-        ...state
-      };
-    case 'REFRESH_ITEM':
-      return {
-        ...state
-      };
-    case 'REFRESH_ITEM_FAILED':
-      return {
-        ...state
+        ...state,
+        ...action.items
       };
     case 'REFRESH_ITEM_SUCCESS':
       return {

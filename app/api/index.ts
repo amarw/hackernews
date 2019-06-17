@@ -32,7 +32,7 @@ export const getBestStories = async (): Promise<Stories> =>
 /**
  * Method to get item details (story, comment, ..others)
  */
-export const getItem = async (id: string): Promise<Item> => {
+export const getItem = async (id: number): Promise<Item> => {
   const endpoint = getEndpoint(EndpointType.Item, id);
   const response = await fetch(endpoint);
   return response.json();
