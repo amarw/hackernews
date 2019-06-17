@@ -19,14 +19,12 @@ function* fetchItem(action: FetchItemAction) {
 
     if (response && response.length > 0) {
       const itemStore = arrayToObject(response);
-      console.log(itemStore);
       yield put(fetchItemsSuccess(itemStore));
     } else {
       // If no items were returned dispatch error
       yield put(fetchItemsFailed());
     }
   } catch (e) {
-    console.log(e);
     yield put(fetchItemsFailed());
   }
 }

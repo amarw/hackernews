@@ -36,7 +36,8 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 0,
     'generator-star-spacing': 0,
     'react/no-multi-comp': 0,
-    'import/prefer-default-export': 0
+    'import/prefer-default-export': 0,
+    'no-useless-escape': 0
   },
   settings: {
     react: {

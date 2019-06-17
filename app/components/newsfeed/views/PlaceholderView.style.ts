@@ -8,7 +8,7 @@ export default StyleSheet.create({
     marginVertical: 12,
     borderColor: Color.border,
     borderWidth: StyleSheet.hairlineWidth,
-    borderRadius: 5
+    borderRadius: 6
   },
   horizontalContainer: {
     flexDirection: 'row',
@@ -16,7 +16,7 @@ export default StyleSheet.create({
   },
   buttonView: {
     flex: 1,
-    height: 40,
+    height: 50,
     justifyContent: 'center',
     alignItems: 'center'
   },

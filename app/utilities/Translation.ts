@@ -16,3 +16,12 @@ const translate = (key?: string): string | null => {
   return null;
 };
 export default translate;
+
+export const getMomentTranlastion = () => {
+  if (
+    translations[currentDeviceLocale] &&
+    translations[currentDeviceLocale]['relativeTime']
+  ) {
+    return translations[currentDeviceLocale]['relativeTime'];
+  }
+};

@@ -12,20 +12,29 @@ interface StateProps {
 interface OwnProps extends ViewProps {
   data: Stories;
   isLoading: boolean;
+  handleLoadNewPageData?: () => void;
+  handleUrlClick: (url: string) => void;
 }
 type FeedListViewProps = OwnProps & StateProps;
 
 class FeedListView extends React.PureComponent<FeedListViewProps, {}> {
   renderItem = ({ item: itemId }: ListRenderItemInfo<number>) => {
-    const { isLoading, items = {} } = this.props;
+    const { isLoading, items = {}, handleUrlClick } = this.props;
     if (isLoading || items[itemId] === undefined) {
       return <PlacholderView isReady={false} />;
     }
-    return <FeedListItemView item={items[itemId]} />;
+    return (
+      <FeedListItemView item={items[itemId]} handleUrlClick={handleUrlClick} />
+    );
   };
 
   render() {
-    const { data, ...otherProps } = this.props;
+    const {
+      data,
+      isLoading,
+      handleLoadNewPageData,
+      ...otherProps
+    } = this.props;
     return (
       <View style={{ flex: 1 }}>
         <FlatList
@@ -33,6 +42,12 @@ class FeedListView extends React.PureComponent<FeedListViewProps, {}> {
           data={data}
           renderItem={this.renderItem}
           keyExtractor={item => item.toString()}
+          onEndReachedThreshold={0.6}
+          onEndReached={() => {
+            if (!isLoading && handleLoadNewPageData) {
+              handleLoadNewPageData();
+            }
+          }}
         />
       </View>
     );

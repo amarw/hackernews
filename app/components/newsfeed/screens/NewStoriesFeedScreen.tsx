@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ViewProps } from 'react-native';
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
+import { withNavigation } from 'react-navigation';
 import { fetchStories, refreshStories } from 'app/actions/StoryFeedActions';
 import { ReduxStore, StoryFeed } from 'app/@types/redux';
 import FeedListView from 'app/components/newsfeed/views/FeedListView';
@@ -18,7 +19,13 @@ interface DispatchProps {
   fetchStories: (storyType: string) => any;
   refreshStories: (storyType: string) => any;
 }
-type NewsFeedListViewProps = OwnProps & DispatchProps & StateProps;
+interface NavigationProps {
+  navigation: any;
+}
+type NewsFeedListViewProps = OwnProps &
+  DispatchProps &
+  StateProps &
+  NavigationProps;
 
 class NewStoriesFeedScreen extends React.Component<NewsFeedListViewProps, {}> {
   componentDidMount() {
@@ -26,12 +33,25 @@ class NewStoriesFeedScreen extends React.Component<NewsFeedListViewProps, {}> {
     fetchFeedStories(routeKey);
   }
 
+  handleUrlClick = (url: string) => {
+    const { navigation } = this.props;
+    if (url && navigation) {
+      navigation.navigate('webview', { url });
+    }
+  };
+
   render() {
     const { newStories } = this.props;
     const data = newStories.isLoading
       ? [...Array(PAGE_LIMIT).keys()]
       : getPageData(newStories.stories, 1);
-    return <FeedListView data={data} isLoading={newStories.isLoading} />;
+    return (
+      <FeedListView
+        data={data}
+        isLoading={newStories.isLoading}
+        handleUrlClick={this.handleUrlClick}
+      />
+    );
   }
 }
 
@@ -48,7 +68,8 @@ const mapDispatchToProps: MapDispatchToProps<DispatchProps, OwnProps> = {
   fetchStories
 };
 
+const NewStoriesFeedScreenWithNavigation = withNavigation(NewStoriesFeedScreen);
 export default connect<StateProps, DispatchProps, OwnProps, ReduxStore>(
   mapStateToProps,
   mapDispatchToProps
-)(NewStoriesFeedScreen);
+)(NewStoriesFeedScreenWithNavigation);

@@ -10,7 +10,8 @@ export default StyleSheet.create({
   },
   accessoryButton: {
     height: 44,
-    width: 40
+    width: 40,
+    marginHorizontal: 8
   },
   navigationTitle: {
     flex: 1,

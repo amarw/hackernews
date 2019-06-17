@@ -30,3 +30,10 @@ export const getPageData = (
   }
   return data.slice(0, numberOfItems);
 };
+
+export const getHostname = (url?: string) => {
+  if (!url) return null;
+
+  const matches = url.match(/^https?\:\/\/(?:www\.)([^\/:?#]+)(?:[\/:?#]|$)/i);
+  return matches && matches[1];
+};

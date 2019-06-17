@@ -1,13 +1,21 @@
 import React from 'react';
-import { StyleProp, Text, TouchableOpacity, ViewStyle } from 'react-native';
+import {
+  StyleProp,
+  Text,
+  TextStyle,
+  TouchableOpacity,
+  ViewStyle
+} from 'react-native';
 
 interface NavigationBarButtonViewProps {
   onPress?: () => void;
   style?: StyleProp<ViewStyle>;
+  textStyle: StyleProp<TextStyle>;
 }
 const NavigationBarButtonView: React.FC<NavigationBarButtonViewProps> = ({
   onPress,
   style,
+  textStyle,
   ...otherProps
 }: NavigationBarButtonViewProps) => (
   <TouchableOpacity
@@ -16,7 +24,7 @@ const NavigationBarButtonView: React.FC<NavigationBarButtonViewProps> = ({
     style={style}
     onPress={onPress}
   >
-    <Text>Back</Text>
+    <Text style={textStyle}>Back</Text>
   </TouchableOpacity>
 );
 export default NavigationBarButtonView;

@@ -22,10 +22,8 @@ const NavigationBarView: React.FC<NavigationBarViewProps> = ({
       <View style={styles.accessoryButton}>
         {showBackButton && (
           <NavigationBarButtonView
-            style={[
-              styles.accessoryButton,
-              { backgroundColor: 'orange', justifyContent: 'center' }
-            ]}
+            style={[styles.accessoryButton, { justifyContent: 'center' }]}
+            textStyle={{ fontSize: 16, fontWeight: '600' }}
             onPress={onBackButtonPress}
           />
         )}
